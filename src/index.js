@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import createStore from './reducks/store/Store';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// createStore()を実行してstoreを作成する
+// ラッピングしているProviderに渡す
+export const store = createStore();
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
